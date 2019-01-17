@@ -60,10 +60,16 @@ describe( 'DecoupledEditor build', () => {
 		} );
 	} );
 
-	describeMemoryUsage( () => {
-		testMemoryUsage(
-			'should not grow on multiple create/destroy',
-			() => DecoupledEditor.create( document.querySelector( '#mem-editor' ) ) );
+	describe( 'increase test timeout', () => {
+		beforeEach( function() {
+			this.timeout( 8000 );
+		} );
+
+		describeMemoryUsage( () => {
+			testMemoryUsage(
+				'should not grow on multiple create/destroy',
+				() => DecoupledEditor.create( document.querySelector( '#mem-editor' ) ) );
+		} );
 	} );
 
 	function test( getEditorDataOrElement ) {

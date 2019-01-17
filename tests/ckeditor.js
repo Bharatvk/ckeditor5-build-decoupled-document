@@ -60,10 +60,8 @@ describe( 'DecoupledEditor build', () => {
 		} );
 	} );
 
-	describe( 'increase test timeout', () => {
-		beforeEach( function() {
-			this.timeout( 8000 );
-		} );
+	describe( 'increase test timeout', function() {
+		this.timeout( 10000 );
 
 		describeMemoryUsage( () => {
 			testMemoryUsage(

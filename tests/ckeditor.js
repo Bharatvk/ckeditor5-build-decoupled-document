@@ -61,8 +61,6 @@ describe( 'DecoupledEditor build', () => {
 	} );
 
 	describe( 'increase test timeout', function() {
-		this.timeout( 10000 );
-
 		describeMemoryUsage( () => {
 			testMemoryUsage(
 				'should not grow on multiple create/destroy',
